@@ -13,3 +13,18 @@ https://modao.cc/app/88c5cb32c4794dbbdd344a1d4c4e7978144c8541?simulator_type=out
 2.写文章   提供书写blog的功能
 
 ### 后端
+使用数据库
+
+文章表
+文章ID（key） 文章Title 文章Date 文章Categories（foreign key） 文章Tags（foreign key） 文章content 描述description
+
+分类表
+文章分类Categories（key） 文章id （foreign key）
+
+标签表
+标签Tags（key） 文章id（foreign key）
+
+用户表
+username password
+
+node作为后端express作为框架，连接mysql，使用在云服务器中ubuntu中安装mysql进行数据操作，后端根据请求返回所需要的信息，
