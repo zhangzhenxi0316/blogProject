@@ -45,21 +45,6 @@ user
 article_tag_view
 article_cate_view
 **后端代码在ProjectNode文件夹中**
-
-##接口
-| 接口地址             | 类型     | 所带参数                                   | 说明                             |
-| -------------------- | -------- | ------------------------------------------ | -------------------------------- |
-| /article/insert      | cahr(10) | title description content category tags    | 插入数据到数据库中               |
-| /article/get_All     | get      | None                                       | 查询全部文章信息（不带tag）      |
-| /article/get_article | Get      | id                                         | 通过id查找文章所有信息           |
-| /article/get_cate    | get      | None                                       | 查找分类信息                     |
-| /article/get_tag     | get      | None                                       | 获取标签信息                     |
-| /article/get_time    | Get      | None                                       | 根据时间发布的长短排序出所有文章 |
-| /article/delete      | Get      | id                                         | 通过id删除文章                   |
-| /article/alter       | Post     | id title description content category tags | 通过id修改文章，不修改日期       |
-| /user/login          | post     | username password                          | 登录功能                         |
-
-
-
+接口在wiki
 
 node作为后端express作为框架，连接mysql，使用在云服务器中ubuntu中安装mysql进行数据操作，后端根据请求返回所需要的信息，
