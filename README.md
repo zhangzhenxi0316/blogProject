@@ -14,17 +14,52 @@ https://modao.cc/app/88c5cb32c4794dbbdd344a1d4c4e7978144c8541?simulator_type=out
 
 ### 后端
 使用数据库
+article
+| 属性        | 类型        |
+| ----------- | ----------- |
+| id          | varchar(50) |
+| title       | Text        |
+| description | Longtext    |
+| content     | longtext    |
+| date        | varchar(30) |
 
-文章表
-文章ID（key） 文章Title 文章Date 文章Categories（foreign key） 文章Tags（foreign key） 文章content 描述description
+article_cate
+| 属性                     | 类型        |
+| ------------------------ | ----------- |
+| category                 | varchar(20) |
+| article_id (foreign key) | varchar(50) |
 
-分类表
-文章分类Categories（key） 文章id （foreign key）
+article_tag
+| 属性                     | 类型        |
+| ------------------------ | ----------- |
+| tag                      | varchar(10) |
+| article_id (foreign key) | varchar(50) |
 
-标签表
-标签Tags（key） 文章id（foreign key）
+user
+| 属性     | 类型user    |
+| -------- | ----------- |
+| username | cahr(10)    |
+| password | varchar(10) |
 
-用户表
-username password
+定义了两个视图
+article_tag_view
+article_cate_view
+**后端代码在ProjectNode文件夹中**
+
+##接口
+| 接口地址             | 类型     | 所带参数                                   | 说明                             |
+| -------------------- | -------- | ------------------------------------------ | -------------------------------- |
+| /article/insert      | cahr(10) | title description content category tags    | 插入数据到数据库中               |
+| /article/get_All     | get      | None                                       | 查询全部文章信息（不带tag）      |
+| /article/get_article | Get      | id                                         | 通过id查找文章所有信息           |
+| /article/get_cate    | get      | None                                       | 查找分类信息                     |
+| /article/get_tag     | get      | None                                       | 获取标签信息                     |
+| /article/get_time    | Get      | None                                       | 根据时间发布的长短排序出所有文章 |
+| /article/delete      | Get      | id                                         | 通过id删除文章                   |
+| /article/alter       | Post     | id title description content category tags | 通过id修改文章，不修改日期       |
+| /user/login          | post     | username password                          | 登录功能                         |
+
+
+
 
 node作为后端express作为框架，连接mysql，使用在云服务器中ubuntu中安装mysql进行数据操作，后端根据请求返回所需要的信息，
